@@ -1,6 +1,6 @@
-import { domain } from '../../../environments/environment';
+//import { domain } from 'src/environments/environment';
 
-//  const domain = 'http://localhost:3000/';
+ const domain = 'http://localhost:3000/';
 
 // const domain = 'http://3.140.242.2:3000/';
 
