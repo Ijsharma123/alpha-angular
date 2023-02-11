@@ -1,0 +1,15 @@
+<div class="side-nav-content">
+    
+    <ul class="nav-list" [ngClass]="{'nav-List-open':sideNavStatus}" >
+        <li class="nav-list-item" *ngFor="let item of list">
+         
+                <i class="{{item.icon}}" [routerLink]="[item.url]" ></i>
+      
+            <span>
+                <a [routerLink]="[item.url]"><h2>{{item.name}}</h2></a>
+                <!-- href="#" -->
+            </span>
+        </li>
+
+    </ul>
+</div>

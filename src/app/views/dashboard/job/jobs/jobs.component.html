@@ -1,0 +1,58 @@
+
+ <div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2><b><u>Job</u></b></h2>
+    </div>
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-primary" (click)="modalData()">Add Jobs</button>
+    </div>
+  </div>
+</div>
+
+
+ <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Client Name</th>
+      <th scope="col">Project Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Site-Work</th>
+      <th scope="col">Assign To</th>
+      <th scope="col">Due Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of jobList; let i=index">
+      <th scope="row">{{1+i}}</th>
+      <td>{{list?.client_name | titlecase}}</td>
+      <td>{{list?.project_name | titlecase}}</td>
+      <td>{{list?.address}}</td>
+      <td>{{list?.site_work}}</td>
+      <td >
+        <div *ngFor="let assign of list?.assign_to">
+          {{assign?.user_name}}
+        </div></td>
+      <td>{{list?.due_date}}</td>
+
+      <td>
+        <button type="button" class="btn btn-primary m-1" (click)="edit(list)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-danger m-1" (click)="delete(list?._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+      </td>
+    </tr>
+    <!-- <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry the Bird</td>
+      <td>Thornton</td>
+      <td>@twitter</td>
+    </tr> -->
+  </tbody>
+</table>

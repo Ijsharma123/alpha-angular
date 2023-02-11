@@ -1,0 +1,39 @@
+
+ <div class="containerBox border w-100">
+     <div class="row w-50">
+       <div class="col-sm-12">
+         <div class="card border-0 shadow rounded-3 my-5 backClr">
+           <div class="card-body p-5">
+             <h1 class="card-title text-center mb-5 fw-light fs-5 text-white"><b>Log In</b></h1>
+             <form [formGroup]="form" (ngSubmit)="onSubmit()">
+               <div class="form-floating mb-3">
+                 <input type="email" class="form-control" id="floatingInput" formControlName="email"
+                 placeholder="Please enter Your email">
+                 <label for="floatingInput">Email address</label>
+               </div>
+               <div *ngIf="submitted && f['email'].errors">
+                  <span style="color: red;" *ngIf="f['email'].errors['required'] ">Please enter Email</span>
+              </div>
+               <div class="form-floating mb-3">
+                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+                 <label for="floatingPassword">Password</label>
+               </div>
+               <div *ngIf="submitted && f['password'].errors">
+                  <span style="color: red;" *ngIf="f['password'].errors['required'] ">Please enter Password</span>
+                  <span style="color: red;" *ngIf="f['password'].errors['minlength'] ">Password must be 3 letter</span>
+              </div>
+
+               <div class="d-grid">
+                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Log
+                   in</button>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+ 
+
+  

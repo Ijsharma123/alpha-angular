@@ -1,0 +1,128 @@
+You can add global styles to this file, and also import other style files
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* @import "~@ng-select/ng-select/themes/default.theme.css"; */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+ul{
+    list-style: none;
+}
+
+/* table td,
+table th{
+    padding: 0.75rem;
+    vertical-align: top;
+} */
+
+.nav-bar{
+    background-color:#343a40 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.nav-bar a{
+    color: white;
+}
+.top-nav li {
+    display: inline-block;
+    padding:15px 15px 15px 0px;
+}
+.title{
+    padding-left: 15px;
+    font-size:20px;
+}
+.wrraper {
+    display: flex;
+}
+.left-content {
+    background-color: white;
+    flex: 3;
+    min-height: 90vh;
+}
+.side-menu{
+    margin-top: 20px;
+}
+.side-menu li {
+    border-bottom: dashed 1px rgb(223, 216, 216);
+}
+.side-menu a{
+    display: block;
+    padding: 10px 15px;
+    columns: #343a40;
+    text-decoration: none;
+}
+.right-content {
+    padding: 20px;
+    flex:12;
+}
+/* table{
+    width:100%;
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-top:1px solid rgb(189, 184, 184) ;
+    border-left:1px solid rgb(189, 184, 184) ;
+}
+table thead th {
+    vertical-align: bottom;
+} */
+/* td,
+th{
+    padding: 0.3rem;
+    border-bottom: 1px solid rgb(189, 184, 184);
+    border-right:1px solid rgb(189, 184, 184) ;
+}
+.btn,
+button {
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: none;
+}
+.btn-del{
+    background-color: tomato;
+}
+form{
+    max-width: 450px;
+    width: 100%;
+    margin: auto;
+}
+label{
+    display: block;
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 30px;
+}
+input{
+    display: block;
+    width:100%;
+    height: 35px;
+    border: turquoise 2px dashed;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+.welcome{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+} */
+
+:host {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0.5em;
+    z-index: 1200;
+  }

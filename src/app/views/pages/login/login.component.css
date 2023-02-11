@@ -1,0 +1,30 @@
+.containerBox {
+    /* background: linear-gradient(to right, #0062E6, #33AEFF); */
+    /* height: 100vh; https://smartcity.eletsonline.com/wp-content/uploads/2014/09/smart-city.jpg */
+    background-image: url("https://smartcity.eletsonline.com/wp-content/uploads/2014/09/smart-city.jpg"); 
+    background-color: #cccccc;
+  /* height: 1000px; */
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    
+}
+  
+
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .backClr {
+    /* background: #d836a8; */
+    background: rgba(0,128,0,0.6);
+    
+  }
+  

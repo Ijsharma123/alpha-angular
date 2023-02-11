@@ -1,0 +1,37 @@
+
+<h2>Profile</h2>
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Email
+      <span class="">{{data?.email}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        Name
+      <span>{{data?.name}}</span>
+    </li>
+
+    <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+        Password
+      <span>{{data?.password}}</span>
+    </li> -->
+
+   <li class="list-group-item d-flex justify-content-between align-items-center">
+    Address
+  <span>{{data?.address}}</span>
+</li> 
+
+ <li class="list-group-item d-flex justify-content-between align-items-center">
+    Logo
+  <span>{{data?.add_logo}}</span>
+</li>
+
+<li class="list-group-item d-flex justify-content-between align-items-center">
+    Contact Number
+  <span>{{data?.contact_number}}</span>
+</li> 
+
+</ul>
+
+<button type="button" class="btn btn-primary" (click)="editProfile()">Edit Profile</button>
+
+ 

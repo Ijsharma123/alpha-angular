@@ -1,0 +1,91 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{user}} Job</h4>
+    <button type="button" class="btn btn-primary close" aria-label="Close" (click)="modalClose()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+  <div class="modal-body">
+
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
+        <div class="mb-3">
+            <label for="exampleFormControlname" class="form-label">Client Name: </label>
+            <input type="text" class="form-control" id="exampleFormControlname" placeholder="" formControlName="name">
+          </div>
+          <div *ngIf="submitted && f['name'].errors">
+            <span style="color: red;" *ngIf="f['name'].errors['required'] ">Please enter Name</span>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlProject" class="form-label">Project Name: </label>
+            <input type="email" formControlName="projectName" class="form-control" id="exampleFormControlProject" placeholder="">
+          </div>
+          <div *ngIf="submitted && f['projectName'].errors">
+            <span style="color: red;" *ngIf="f['projectName'].errors['required'] ">Please enter ProjectName</span>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlAddress" class="form-label">Address: </label>
+            <input type="email" class="form-control" id="exampleFormControlAddress" placeholder="" formControlName="address">
+          </div>
+          <div *ngIf="submitted && f['address'].errors">
+            <span style="color: red;" *ngIf="f['address'].errors['required'] ">Please enter Address</span>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlNote" class="form-label">Notes: </label>
+            <textarea class="form-control" id="exampleFormControlNote" rows="3" formControlName="note"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlWork" class="form-label">Site-Work: </label>
+            <input type="date" class="form-control" id="exampleFormControlWork" placeholder="" formControlName="siteWork">
+          </div>
+          <div *ngIf="submitted && f['siteWork'].errors">
+            <span style="color: red;" *ngIf="f['siteWork'].errors['required'] ">Please enter Site-Work</span>
+        </div>
+<!-- Multiple Select -->
+        <div class="mb-3">
+            <label for="assignTo" class="form-label">Assign To: </label>
+            <!-- <select cSelect id="assignTo" class="form-select" aria-label="Default select example" formControlName='assignTo' multiple>
+              <option disabled [selected]="true"> Select Assign To </option>
+              <option *ngFor="let list of userList" [value]="list._id
+              ">{{list.user_name}}</option>
+            </select> -->
+         
+          <div class="form-check form-check-inline" *ngFor="let list of userList">
+            <input class="form-check-input" type="checkbox" formControlName='assignTo' id="{{list._id}}" value="true" (click)="asignTo(list)">
+            <label class="form-check-label" for="{{list._id}}">{{list.user_name}}</label>
+          </div>
+         </div> 
+          <div *ngIf="submitted && f['assignTo'].errors">
+            <span style="color: red;" *ngIf="f['assignTo'].errors['required'] ">Please enter Assign To</span>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControldue" class="form-label">Due Date: </label>
+            <input type="date" class="form-control" id="exampleFormControldue" placeholder="" formControlName="duedate">
+          </div>
+          <div *ngIf="submitted && f['duedate'].errors">
+            <span style="color: red;" *ngIf="f['duedate'].errors['required'] ">Please enter Due Date</span>
+        </div>
+
+
+
+   <div class="modal-footer">
+    <div class="d-grid">
+        <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">
+            Save</button>
+      </div>
+    <!-- <button type="submit" class="btn btn-outline-dark">Save</button> -->
+  <!-- <button type="submit" class="btn btn-primary">Save</button>  -->
+  </div>
+
+  </form>
+  </div>
+  <!-- <input type="text" (click)="handleInput($event)"> -->
+
+
+
+

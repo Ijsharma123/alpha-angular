@@ -1,0 +1,98 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{user}} User
+
+    </h4>
+    <button type="button" class="btn btn-primary close" aria-label="Close" (click)="modalClose()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+  <div class="modal-body">
+
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
+        <div class="mb-3">
+            <label for="exampleFormControlname" class="form-label">Name: </label>
+            <input type="text" class="form-control" id="exampleFormControlname" placeholder="" formControlName="name">
+          </div>
+          <div *ngIf="submitted && f['name'].errors">
+            <span style="color: red;" *ngIf="f['name'].errors['required'] ">Please enter Name</span>
+        </div>
+
+          <div class="mb-3" *ngIf="user == 'Add'">
+            <label for="exampleFormControlProject" class="form-label">Email: </label>
+            <input type="email" formControlName="email" class="form-control" id="exampleFormControlProject" placeholder="">
+          </div>
+         <div *ngIf="user == 'Add'">
+          <div *ngIf=" submitted && f['email'].errors">
+            <span style="color: red;" *ngIf="f['email'].errors['required'] ">Please enter Email</span>
+        </div>
+         </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlAddress" class="form-label">Group: </label>
+            <select cSelect id="exampleFormControlAddress" class="form-select" aria-label="Default select example" formControlName='group'>
+              <option disabled [selected]="true"> Select Group </option>
+              <option *ngFor="let list of group" [value]="list._id">{{ list.name | titlecase }}</option>
+            </select>
+            <!-- <input type="email" class="form-control" id="exampleFormControlAddress" placeholder="" formControlName="group"> -->
+          </div>
+          <div *ngIf="submitted && f['group'].errors">
+            <span style="color: red;" *ngIf="f['group'].errors['required'] ">Please enter Group</span>
+        </div>
+
+
+          <!-- <div class="mb-3">
+            <label for="exampleFormControlNote" class="form-label">Access</label>
+            <textarea class="form-control" id="exampleFormControlNote" rows="3" formControlName="access"></textarea>
+          </div> -->
+
+
+          <!-- <div class="mb-3">
+            <label cLabel for="exampleFormControlStatus">Status</label><br>
+            <select cSelect id="exampleFormControlStatus" class="form-control" formControlName='status'>
+              <option [disabled]="true" [selected]="true">Select Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div> -->
+
+          <div class="mb-3">
+            <label for="exampleFormControlWork" class="form-label">Access:</label>
+            <select cSelect id="exampleFormControlWork" class="form-select" aria-label="Default select example" formControlName='access'>
+              <option disabled="true" selected="true">Select Access</option>
+              <option value="Mobile">Mobile Only</option>
+              <option value="website">Website Only</option>
+              <option value="both">Both Devices</option>
+              <option value="block">Block User</option>
+            </select>
+            <!-- <input type="text" class="form-control" id="exampleFormControlWork" placeholder="" formControlName="access"> -->
+          </div>
+          <div *ngIf="submitted && f['access'].errors">
+            <span style="color: red;" *ngIf="f['access'].errors['required'] ">Please enter Access</span>
+        </div>
+
+          <div class="mb-3" *ngIf="user == 'Add'">
+            <label for="exampleFormControlAssign" class="form-label">Password</label>
+            <input type="assignTo" class="form-control" id="exampleFormControlAssign" placeholder="" formControlName="password">
+          </div>
+        <div *ngIf="user == 'Add'">
+          <div *ngIf="submitted && f['password'].errors">
+            <span style="color: red;" *ngIf="f['password'].errors['required'] ">Please enter Password</span>
+        </div>
+        </div>
+
+
+
+   <div class="modal-footer">
+    <div class="d-grid">
+        <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">
+            Save</button>
+      </div>
+    <!-- <button type="submit" class="btn btn-outline-dark">Save</button> -->
+  <!-- <button type="submit" class="btn btn-primary">Save</button>  -->
+  </div>
+
+  </form>
+  </div>
+  <!-- <input type="text" (click)="handleInput($event)"> -->

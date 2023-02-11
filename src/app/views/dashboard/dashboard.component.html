@@ -1,0 +1,45 @@
+<!-- 
+<div class="container-fluid g-0">
+  <app-header (sidenavToggled)="sideNavStatus = $event;"></app-header>
+</div>
+  <div class="main">
+    <app-side-nav [sideNavStatus]="sideNavStatus"  [ngClass]="{'app-side-nav-open':sideNavStatus}"></app-side-nav>
+
+    <div class="display-area p-5" [ngClass]="{'display-area-shrink':sideNavStatus}">
+      <router-outlet></router-outlet>
+     
+      
+    </div>
+  </div> -->
+
+  
+<!-- <div class="container-fluid g-0">
+  <app-header (sidenavToggled)="sideNavStatus = $event;"></app-header>
+</div>
+  <div class="main">
+    <app-side-nav [sideNavStatus]="sideNavStatus"  [ngClass]="{'app-side-nav-open':sideNavStatus}"></app-side-nav>
+
+    <div class="display-area p-5" [ngClass]="{'display-area-shrink':sideNavStatus}">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div> -->
+
+
+  <h2>admin works!</h2>
+  <app-header (sidenavToggled)="sideNavStatus = $event;"></app-header>
+<div class="main">
+
+      <div class="left-content">
+        <app-side-nav [sideNavStatus]="sideNavStatus"  [ngClass]="{'app-side-nav-open':sideNavStatus}"></app-side-nav>
+     </div>
+
+      <div class="right-content" >
+             <router-outlet></router-outlet>
+      </div>
+
+</div>
+
+
+
+

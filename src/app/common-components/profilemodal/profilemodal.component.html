@@ -1,0 +1,79 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit Profile</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalClose()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+  <div class="modal-body">
+
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
+        <div class="mb-3">
+            <label for="exampleFormControlname" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleFormControlname" placeholder="" formControlName="name">
+          </div>
+          <div *ngIf="submitted && f['name'].errors">
+            <span style="color: red;" *ngIf="f['name'].errors['required'] ">Please enter Name</span>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlProject" class="form-label">Email</label>
+            <input type="email" formControlName="email" class="form-control" id="exampleFormControlProject" placeholder="">
+          </div>
+          <div *ngIf="submitted && f['email'].errors">
+            <span style="color: red;" *ngIf="f['email'].errors['required'] ">Please enter Email</span>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlAddress" class="form-label">Address</label>
+            <textarea type="email" class="form-control" id="exampleFormControlAddress" placeholder="" formControlName="address"></textarea>
+          </div>
+          <div *ngIf="submitted && f['address'].errors">
+            <span style="color: red;" *ngIf="f['address'].errors['required'] ">Please enter address</span>
+        </div>
+
+          <!-- <div class="mb-3">
+            <label for="exampleFormControlNote" class="form-label">Access</label>
+            <textarea class="form-control" id="exampleFormControlNote" rows="3" formControlName="access"></textarea>
+          </div> -->
+
+          <div class="mb-3">
+            <label for="exampleFormControlWork" class="form-label">Logo-</label>
+            <input type="text" class="form-control" id="exampleFormControlWork" placeholder="" formControlName="logo">
+          </div>
+          <div *ngIf="submitted && f['logo'].errors">
+            <span style="color: red;" *ngIf="f['logo'].errors['required'] ">Please enter logo</span>
+        </div>
+
+          <!-- <div class="mb-3">
+            <label for="exampleFormControlAssign" class="form-label">Password</label>
+            <input type="assignTo" class="form-control" id="exampleFormControlAssign" placeholder="" formControlName="password">
+          </div>
+          <div *ngIf="submitted && f['password'].errors">
+            <span style="color: red;" *ngIf="f['password'].errors['required'] ">Please enter Password</span>
+        </div> -->
+
+          <div class="mb-3">
+            <label for="exampleFormControldue" class="form-label">Contact Number</label>
+            <input type="number" class="form-control" id="exampleFormControldue" placeholder="" formControlName="contactNumber">
+          </div>
+          <div *ngIf="submitted && f['contactNumber'].errors">
+            <span style="color: red;" *ngIf="f['contactNumber'].errors['required'] ">Please enter contact Number</span>
+        </div>
+           
+       
+
+   <div class="modal-footer"> 
+    <div class="d-grid">
+        <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">
+            Save</button>
+      </div> 
+    <!-- <button type="submit" class="btn btn-outline-dark">Save</button> -->
+  <!-- <button type="submit" class="btn btn-primary">Save</button>  -->
+  </div>
+  
+  </form>
+  </div>
+  <!-- <input type="text" (click)="handleInput($event)"> -->
+  

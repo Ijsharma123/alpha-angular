@@ -1,0 +1,42 @@
+
+ <div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2><b><u>User</u></b></h2>
+    </div>
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-primary" (click)="modalData()">Add User</button>
+    </div>
+  </div>
+</div>
+
+
+ <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col"> Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Group</th>
+      <th scope="col">Access</th>
+      <!-- <th scope="col">Password</th> -->
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of data let i=index;">
+      <th scope="row">{{i+1}}</th>
+      <td>{{list?.user_name}}</td>
+      <td>{{list?.email}}</td>
+      <td><span class="text-primary">{{list?.user_group_name  | titlecase }}</span></td>
+      <td><span class="text-warning">{{list?.access | titlecase }}</span></td>
+      <!-- <td>{{list?.password}}</td> -->
+
+      <td>
+        <button type="button" class="btn btn-secondary m-1" (click)="edit(list)">Edit</button>
+        <button type="button" class="btn btn-danger m-1" (click)="delete(list)">Delete</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
