@@ -1,6 +1,6 @@
 //import { domain } from 'src/environments/environment';
 
- const domain = 'http://localhost:3000/';
+ const domain = 'https://alpha-backend-kappa.vercel.app/';
 
 // const domain = 'http://3.140.242.2:3000/';
 
