@@ -1,6 +1,6 @@
 //import { domain } from 'src/environments/environment';
 
- const domain = 'https://alpha-backend-kappa.vercel.app/';
+ const domain = 'https://alpha-backend-six.vercel.app/';
 
 // const domain = 'http://3.140.242.2:3000/';
 
